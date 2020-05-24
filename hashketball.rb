@@ -199,6 +199,21 @@ end
 
 # Implementation methods
 
+# Returns hash of player's stats, given player's name
+# def player_stats(name)
+#  side = player_side(name)
+#  index = player_index(name)
+#  game_hash[side][:players][index]
+#end
+
+def player_stats(name)
+  result = join_teams.select do |player|
+    player[:player_name] == name
+end
+  result[0]
+end
+
+
 # Returns points scored by player
 # def num_points_scored(name)
   # side = player_side(name)
