@@ -206,7 +206,7 @@ def find_team_side(team)
   end
 end
 
-find_team_side("Charlotte Hornets")
+pp find_team_side("Charlotte Hornets")
 
 
 # Implementation methods
