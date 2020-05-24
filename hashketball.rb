@@ -193,10 +193,12 @@ end
 
 # Returns array of team names
 def team_names
-  array = []
-  game_hash.select do |k,v
-  array << game_hash[:home][:team_name]
-  array << game_hash[:away][:team_name]
+#  array = []
+  game_hash.select do |k,v|
+    k.
+end
+#  array << game_hash[:home][:team_name]
+#  array << game_hash[:away][:team_name]
 end
 
 # Returns array of player numbers, given team name
