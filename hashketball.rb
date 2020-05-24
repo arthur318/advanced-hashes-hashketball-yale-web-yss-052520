@@ -207,7 +207,7 @@ end
 #end
 
 def num_points_scored(name)
-  hash = find_player_hash(name)
+  hash = player_stats(name)
   hash[:points]
 end
 
@@ -221,7 +221,7 @@ num_points_scored("Alan Anderson")
 # end
 
 def shoe_size(name)
-  hash = find_player_hash(name)
+  hash = player_stats(name)
   hash[:shoe]
 end
 
