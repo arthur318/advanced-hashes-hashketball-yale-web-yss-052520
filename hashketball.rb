@@ -249,20 +249,6 @@ end
   numbers
 end
 
-# Returns hash of player's stats, given player's name
-# def player_stats(name)
-#  side = player_side(name)
-#  index = player_index(name)
-#  game_hash[side][:players][index]
-#end
-
-def player_stats(name)
-  result = join_teams.select do |player|
-    player[:player_name] == name
-end
-  result[0]
-end
-
 # Returns number of rebounds associated with player that has largest shoe size
 def big_shoe_rebounds
 # Identify player's name with largest shoe size
