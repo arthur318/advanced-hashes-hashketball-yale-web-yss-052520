@@ -202,7 +202,7 @@ end
 # Returns team side, given team name
 def find_team_side(team)
   game_hash.select do |k,v|
-    v.keys == team
+    v[:team_name] == team
   end
 end
 
