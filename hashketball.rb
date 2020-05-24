@@ -199,15 +199,13 @@ def find_player_name(hash)
   hash[:player_name]
 end
 
-# Returns team hash, given team name
+# Returns team side, given team name
 def find_team_side(team)
-  game_hash.select do |k,v|
+  hash = game_hash.select do |k,v|
     v[:team_name] == team
   end
+  hash.keys[0]
 end
-
-pp find_team_side("Charlotte Hornets").keys
-
 
 # Implementation methods
 
@@ -238,7 +236,7 @@ end
 
 # Returns array of team's colors
 def team_colors(team)
-  side = team_side(team)
+  side = find_team_side(team)
   game_hash[side][:colors]
 end
 
