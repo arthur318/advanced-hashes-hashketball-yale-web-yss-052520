@@ -175,13 +175,6 @@ def team_side(team)
   end
 end
 
-# Returns player's rebound stat
-def rebounds(name)
-  side = player_side(name)
-  index = player_index(name)
-  game_hash[side][:players][index][:rebounds]
-end
-
 # Creates an separate array of all players
 def join_teams
   game_hash[:home][:players].concat(game_hash[:away][:players])
