@@ -206,7 +206,7 @@ def find_team_side(team)
   end
 end
 
-pp find_team_side("Charlotte Hornets").key
+pp find_team_side("Charlotte Hornets").keys
 
 
 # Implementation methods
