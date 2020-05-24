@@ -231,7 +231,6 @@ end
 def team_colors(team)
   side = team_side(team)
   game_hash[side][:colors]
-  game_hash.valu
   require.pry
 end
 
