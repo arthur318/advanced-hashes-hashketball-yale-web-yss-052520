@@ -233,7 +233,7 @@ def team_colors(team)
   game_hash[side][:colors]
 end
 
-game_hash.key({:team_name => "Charlotte Hornets"})
+pp game_hash.key({:team_name => "Charlotte Hornets"})
 
 # Returns array of team names
 def team_names
