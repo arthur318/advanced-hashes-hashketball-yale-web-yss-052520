@@ -1,3 +1,6 @@
+# Require 
+require 'pry'
+
 # Write your code below game_hash
 def game_hash
   {
@@ -228,7 +231,11 @@ end
 def team_colors(team)
   side = team_side(team)
   game_hash[side][:colors]
+  game_hash.valu
+  require.pry
 end
+
+
 
 # Returns array of team names
 def team_names
