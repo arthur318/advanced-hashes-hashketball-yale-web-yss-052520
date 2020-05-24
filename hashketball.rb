@@ -199,6 +199,11 @@ def find_player_name(hash)
   hash[:player_name]
 end
 
+# Returns team name, given hash
+def find_player_name(hash)
+  hash[:player_name]
+end
+
 
 # Implementation methods
 
