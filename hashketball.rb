@@ -132,48 +132,6 @@ end
 # Write code here
 
 # Helper methods
-# Returns if player team is away or home
-def player_side(name)
-  home_players = ["Alan Anderson", "Reggie Evans", "Brook Lopez", "Mason Plumlee", "Jason Terry"]
-  away_players = ["Jeff Adrien", "Bismack Biyombo", "DeSagna Diop", "Ben Gordon", "Kemba Walker"]
-  if home_players.include? name
-    p :home
-  elsif away_players.include? name
-    p :away
-  else
-    p nil
-  end
-end
-
-# Returns array index of player
-def player_index(name)
-  case name
-    when "Alan Anderson", "Jeff Adrien"
-      p 0 
-    when "Reggie Evans", "Bismack Biyombo"
-      p 1 
-    when "Brook Lopez", "DeSagna Diop"
-      p 2
-    when "Mason Plumlee", "Ben Gordon"
-      p 3
-    when "Jason Terry", "Kemba Walker"
-      p 4 
-    else
-      p nil 
-end
-end
-
-# Returns whether team name is home or away
-def team_side(team)
-  case team
-    when "Brooklyn Nets"
-      :home
-    when "Charlotte Hornets"
-      :away
-    else
-      nil
-  end
-end
 
 # Creates an separate array of all players
 def join_teams
@@ -232,8 +190,6 @@ def team_colors(team)
   side = find_team_side(team)
   game_hash[side][:colors]
 end
-
-pp game_hash.key({:team_name => "Charlotte Hornets"})
 
 # Returns array of team names
 def team_names
