@@ -199,9 +199,12 @@ def find_player_name(hash)
   hash[:player_name]
 end
 
-# Returns team name, given hash
-def find_player_name(hash)
-  hash[:player_name]
+# Returns team side, given team name
+def find_team_side(team)
+  game_hash.select
+team
+
+
 end
 
 
