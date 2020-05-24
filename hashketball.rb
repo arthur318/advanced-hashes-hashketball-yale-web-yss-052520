@@ -179,21 +179,52 @@ def rebounds(name)
   game_hash[side][:players][index][:rebounds]
 end
 
+# Creates an separate array of all players
+def join_teams
+  game_hash[:home][:players].concat(game_hash[:away][:players])
+end
+
+# Finds player hash with largest shoe size
+def home_shoe_max
+  join_teams.max_by do |player|
+    player[:shoe]
+end
+end
+
+# Finds player name, given hash
+def find_player_name(hash)
+  hash[:player_name]
+end
+
+
 # Implementation methods
 
 # Returns points scored by player
+# def num_points_scored(name)
+  # side = player_side(name)
+ # index = player_index(name)
+ # game_hash[side][:players][index][:points]
+#end
+
 def num_points_scored(name)
-  side = player_side(name)
-  index = player_index(name)
-  game_hash[side][:players][index][:points]
+  hash = find_player_hash(name)
+  hash[:points]
 end
 
+num_points_scored("Alan Anderson")
+
 # Returns shoe size of the player
+# def shoe_size(name)
+#  side = player_side(name)
+#  index = player_index(name)
+#  game_hash[side][:players][index][:shoe]
+# end
+
 def shoe_size(name)
-  side = player_side(name)
-  index = player_index(name)
-  game_hash[side][:players][index][:shoe]
+  hash = find_player_hash(name)
+  hash[:shoe]
 end
+
 
 # Returns array of team's colors
 def team_colors(team)
@@ -221,10 +252,17 @@ end
 end
 
 # Returns hash of player's stats, given player's name
+# def player_stats(name)
+#  side = player_side(name)
+#  index = player_index(name)
+#  game_hash[side][:players][index]
+#end
+
 def player_stats(name)
-  side = player_side(name)
-  index = player_index(name)
-  game_hash[side][:players][index]
+  result = join_teams.select do |player|
+    player[:player_name] == name
+end
+  result[0]
 end
 
 # Returns number of rebounds associated with player that has largest shoe size
@@ -233,21 +271,4 @@ def big_shoe_rebounds
   big_foot = find_player_name(home_shoe_max)
 # Return that player's number of rebounds
   rebounds(big_foot)
-end
-
-# Creates an separate array of all players
-def join_teams
-  game_hash[:home][:players].concat(game_hash[:away][:players])
-end
-
-# Finds player hash with largest shoe size
-def home_shoe_max
-  join_teams.max_by do |player|
-    player[:shoe]
-end
-end
-
-# Finds player name, given hash
-def find_player_name(hash)
-  hash[:player_name]
 end
