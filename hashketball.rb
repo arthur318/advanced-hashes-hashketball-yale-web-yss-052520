@@ -233,7 +233,7 @@ def team_colors(team)
   game_hash[side][:colors]
 end
 
-game_hash
+game_hash.key(:)
 
 # Returns array of team names
 def team_names
