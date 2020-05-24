@@ -199,12 +199,8 @@ end
 
 # Implementation methods
 
-# Returns hash of player's stats, given player's name
-# def player_stats(name)
-#  side = player_side(name)
-#  index = player_index(name)
-#  game_hash[side][:players][index]
-#end
+# Returns hash of player's stats, given player's name.
+# Moved this method to the beginning to use with other following methods.
 
 def player_stats(name)
   result = join_teams.select do |player|
@@ -215,26 +211,13 @@ end
 
 
 # Returns points scored by player
-# def num_points_scored(name)
-  # side = player_side(name)
- # index = player_index(name)
- # game_hash[side][:players][index][:points]
-#end
-
 def num_points_scored(name)
   hash = player_stats(name)
   hash[:points]
 end
 
-num_points_scored("Alan Anderson")
 
 # Returns shoe size of the player
-# def shoe_size(name)
-#  side = player_side(name)
-#  index = player_index(name)
-#  game_hash[side][:players][index][:shoe]
-# end
-
 def shoe_size(name)
   hash = player_stats(name)
   hash[:shoe]
