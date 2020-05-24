@@ -251,7 +251,7 @@ end
 
 # Returns array of player numbers, given team name
 def player_numbers(team)
-  side = team_side(team)
+  side = find_team_side(team)
   numbers = []
   counter = 0
   while game_hash[side][:players][counter] do
