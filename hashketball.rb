@@ -199,14 +199,14 @@ def find_player_name(hash)
   hash[:player_name]
 end
 
-# Returns team side, given team name
+# Returns team hash, given team name
 def find_team_side(team)
   game_hash.select do |k,v|
     v[:team_name] == team
   end
 end
 
-pp find_team_side("Charlotte Hornets")
+pp find_team_side("Charlotte Hornets").key
 
 
 # Implementation methods
