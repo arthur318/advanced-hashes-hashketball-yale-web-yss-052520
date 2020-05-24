@@ -194,8 +194,8 @@ end
 # Returns array of team names
 def team_names
   array = []
-  #  array << game_hash[:home][:team_name]
-#  array << game_hash[:away][:team_name]
+  array << game_hash[:home][:team_name]
+  array << game_hash[:away][:team_name]
 end
 
 # Returns array of player numbers, given team name
