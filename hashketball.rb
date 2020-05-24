@@ -201,11 +201,12 @@ end
 
 # Returns team side, given team name
 def find_team_side(team)
-  game_hash.select
-team
-
-
+  game_hash.select do |k,v|
+    v.keys == team
+  end
 end
+
+find_team_side("Charlotte Hornets")
 
 
 # Implementation methods
