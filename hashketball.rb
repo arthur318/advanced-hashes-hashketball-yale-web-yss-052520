@@ -267,4 +267,6 @@ def big_shoe_rebounds
   big_foot = find_player_name(home_shoe_max)
 # Return that player's number of rebounds
   rebounds(big_foot)
+  hash = player_stats(big_foot)
+  hash[:rebounds]
 end
